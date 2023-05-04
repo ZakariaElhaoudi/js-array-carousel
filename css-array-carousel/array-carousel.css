@@ -1,0 +1,27 @@
+/* regole generali  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+#container .list-item {
+    width: 60%;
+    height: 400px;
+    margin: auto;
+
+}
+
+.item img {
+    max-width: 100%;
+    min-height: 100%;
+}
+
