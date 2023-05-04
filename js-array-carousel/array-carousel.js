@@ -2,29 +2,31 @@
 Al click dell’utente sulle frecce, il programma cambierà l’immagine attiva, che quindi verrà visualizzata al posto della precedente.*/
 
 // variabili globali 
-
-
+ const rightArrow = document.querySelector('.right-arrow')
+ const container =document.getElementById("list-item")
+ let  esitoImmagine = "";
 // creazione dell’array 
 const immagini = [
-    "./img/01.webp",
-    "./img/02.webp",
-    "./img/03.webp",
-    "./img/04.webp",
-    "./img/05.webp",
+    "../img/01.webp",
+    "../img/02.webp",
+    "../img/03.webp",
+    "../img/04.webp",
+    "../img/05.webp",
   ];
   console.log(immagini);
 
-  const immagineAttiva = immagini[0];
-  
+  let immagineAttiva = 0;
  
-
-  const rightArrow = document.querySelector('.right-arrow')
-
+  
   rightArrow.addEventListener('click',
-     function () {
-         for (let index = 0; index < immagini.length; index++) {
-            const active = immagini[immagineAttiva];
-    
+     function () { 
+        for (let index = 0; index < immagini.length; index++) {
+            const numImmagine = immagineAttiva++;
+             container.innerHTML = `<div class="square">${immagineAttiva}</div>`;
+            
         }
+      
+
+
     }
   )
