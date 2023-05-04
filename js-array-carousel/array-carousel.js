@@ -15,18 +15,25 @@ const immagini = [
   ];
   console.log(immagini);
 
-  let immagineAttiva = 0;
+  for(let i = 0; i < immagini.length; i++){
+    const item = `<div class="square"></div>`;
+    container.innerHTML += item;
+    console.log(item);
+}
+
+
+//   let immagineAttiva = 0;
  
   
-  rightArrow.addEventListener('click',
-     function () { 
-        for (let index = 0; index < immagini.length; index++) {
-            const numImmagine = immagineAttiva++;
-             container.innerHTML = `<div class="square">${immagineAttiva}</div>`;
+//   rightArrow.addEventListener('click',
+//      function () { 
+//         for (let index = 0; index < immagini.length; index++) {
+//             const numImmagine = immagineAttiva++;
+//             container.innerHTML = `<div class="square">${immagineAttiva}</div>`;
             
-        }
+//         }
       
 
 
-    }
-  )
+//     }
+//   )
