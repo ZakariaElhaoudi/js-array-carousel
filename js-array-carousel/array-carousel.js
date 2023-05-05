@@ -2,38 +2,73 @@
 Al click dell’utente sulle frecce, il programma cambierà l’immagine attiva, che quindi verrà visualizzata al posto della precedente.*/
 
 // variabili globali 
- const rightArrow = document.querySelector('.right-arrow')
+ const topArrow = document.querySelector('.top-arrow')
+ const bottomArrow = document.querySelector('.bottom-arrow')
  const container =document.getElementById("list-item")
- let  esitoImmagine = "";
+ let immagineAttiva = 0;
 // creazione dell’array 
 const immagini = [
-    "../img/01.webp",
-    "../img/02.webp",
-    "../img/03.webp",
-    "../img/04.webp",
-    "../img/05.webp",
+    "img/01.webp",
+    "img/02.webp",
+    "img/03.webp",
+    "img/04.webp",
+    "img/05.webp",
   ];
   console.log(immagini);
-
+  
+// ciclo creazione div 
   for(let i = 0; i < immagini.length; i++){
-    const item = `<div class="square"></div>`;
+    
+    const item = `<div class="square ${immagini[i]}"><img src="${immagini[i]}"></div>`;
+    
     container.innerHTML += item;
+    
     console.log(item);
 }
 
+const items = container.querySelectorAll('.square');
+        
+items[immagineAttiva].classList.add('active');  
+        
 
-//   let immagineAttiva = 0;
- 
+
   
-//   rightArrow.addEventListener('click',
-//      function () { 
-//         for (let index = 0; index < immagini.length; index++) {
-//             const numImmagine = immagineAttiva++;
-//             container.innerHTML = `<div class="square">${immagineAttiva}</div>`;
+  topArrow.addEventListener('click',
+     function () { 
             
-//         }
-      
+      const items = container.querySelectorAll('.square');
+        
+      items[immagineAttiva].classList.remove('active');
+        
+      immagineAttiva++;
+        
+      if (immagineAttiva >= immagini.length) {
+        immagineAttiva = 0;
+        
+      }
+        
+      items[immagineAttiva].classList.add('active');
 
 
-//     }
-//   )
+    }
+  )
+
+  bottomArrow.addEventListener('click',
+  function () { 
+         
+   const items = container.querySelectorAll('.square');
+     
+   items[immagineAttiva].classList.remove('active');
+     
+   immagineAttiva++;
+     
+   if (immagineAttiva >= immagini.length) {
+     immagineAttiva = 0;
+     
+   }
+     
+   items[immagineAttiva].classList.add('active');
+
+
+ }
+)
